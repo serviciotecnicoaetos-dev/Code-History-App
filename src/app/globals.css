@@ -2,28 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 255, 255, 255; /* Texto blanco */
-  --background-start-rgb: 10, 10, 10; /* Fondo casi negro */
-  --background-end-rgb: 10, 10, 10;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 10, 10, 10;
-    --background-end-rgb: 10, 10, 10;
-  }
-}
-
+/* Definimos los colores y la fuente para todo el proyecto */
 body {
-  color: rgb(var(--foreground-rgb));
-  background-color: rgb(var(--background-start-rgb));
-  font-family: monospace; /* Fuente tipo terminal */
+  @apply bg-[#0A0A0A] text-white font-mono;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Animación para el cursor que parpadea */
+@keyframes pulse {
+  50% {
+    opacity: 0;
   }
+}
+
+/* Aplicamos la animación */
+.animate-pulse {
+  animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
