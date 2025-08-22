@@ -1,10 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Definimos los colores y la fuente para todo el proyecto */
+/* Estilos base globales */
 body {
-  @apply bg-[#0A0A0A] text-white font-mono;
+  background-color: #0A0A0A;
+  color: #ffffff;
+}
+
+/* Fondo con gradiente sutil y animado */
+@keyframes gradientShift {
+  0% { transform: translate3d(0,0,0) scale(1); opacity: 0.35; }
+  50% { transform: translate3d(3%, -3%, 0) scale(1.06); opacity: 0.5; }
+  100% { transform: translate3d(0,0,0) scale(1); opacity: 0.35; }
+}
+
+.animated-gradient-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(70px);
+  /* verde cercano a text-green-400 (#4ade80) */
+  background: radial-gradient(42% 38% at 20% 20%, rgba(74,222,128,0.10), transparent 60%),
+              radial-gradient(36% 44% at 80% 30%, rgba(74,222,128,0.08), transparent 60%),
+              radial-gradient(48% 42% at 50% 80%, rgba(74,222,128,0.09), transparent 60%);
+  animation: gradientShift 20s ease-in-out infinite;
 }
 
 /* Animación para el cursor que parpadea */

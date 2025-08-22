@@ -6,22 +6,38 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate:ephemeris": "node scripts/generate-daily-ephemeris.js",
+    "generate:ephemeris:date": "node scripts/generate-daily-ephemeris.js",
+    "cron:install": "node scripts/setup-cron.js install",
+    "cron:remove": "node scripts/setup-cron.js remove",
+    "cron:show": "node scripts/setup-cron.js show"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.55.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "dotenv": "^16.6.1",
+    "geist": "^1.4.2",
+    "lucide-react": "^0.540.0",
+    "next": "15.5.0",
+    "openai": "^4.104.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.0"
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.5.0",
-    "@eslint/eslintrc": "^3"
+    "stylelint": "^16.23.1",
+    "stylelint-config-tailwindcss": "^1.0.0",
+    "tailwindcss": "^4.1.12",
+    "tw-animate-css": "^1.3.7",
+    "typescript": "^5"
   }
 }
